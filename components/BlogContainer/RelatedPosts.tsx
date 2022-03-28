@@ -21,8 +21,8 @@ export default function RelatedPosts(props: Props) {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4  my-4">
       {posts &&
-        posts.map((post: PostData) => (
-          <div>
+        posts.map((post: PostData, i) => (
+          <div key={i}>
             <div className="grid grid-cols-2  bg-cardBackground md:block     rounded-md ">
               <div className="hidden">
                 <Image
@@ -51,8 +51,8 @@ export default function RelatedPosts(props: Props) {
               <div className="p-4 mb-4 text-white  ">
                 <div className="hidden md:block">
                   {post.category.length > 0 &&
-                    post.category.map((singleCat: any) => (
-                      <Link href={`/blog/category/${singleCat.slug}`}>
+                    post.category.map((singleCat: any, i: number) => (
+                      <Link key={i} href={`/blog/category/${singleCat.slug}`}>
                         <a
                           href={`/blog/category/${singleCat.slug}`}
                           className="uppercase font-bold text-sm tracking-widest text-brand	  mx-2"

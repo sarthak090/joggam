@@ -8,7 +8,7 @@ import { pagination } from "../../blog.config";
 interface Props {
   posts?: Posts[];
 }
-export default function index(props: Props) {
+export default function Index(props: Props) {
   const { posts } = props;
   const [postsData, setPostsData] = useState(posts);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -51,7 +51,7 @@ export default function index(props: Props) {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4  my-4">
         {currentPosts &&
           currentPosts.map((post: PostData) => (
-            <div className="">
+            <div key={post.id}>
               <div className="  bg-cardBackground block     rounded-md ">
                 <Image
                   // loader={myLoader}
@@ -65,8 +65,8 @@ export default function index(props: Props) {
 
                 <div className="p-4 mb-4 text-white  ">
                   {post.category.length > 0 &&
-                    post.category.map((singleCat: any) => (
-                      <Link href={`/blog/category/${singleCat.slug}`}>
+                    post.category.map((singleCat: any, i) => (
+                      <Link key={i} href={`/blog/category/${singleCat.slug}`}>
                         <a
                           href={`/blog/category/${singleCat.slug}`}
                           className="uppercase font-bold text-sm tracking-widest text-brand	  mx-2"

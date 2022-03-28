@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Comments from "./Comments";
+import Img from "next/image";
+// import Comments from "./Comments";
 import ShareOption from "./ShareOption";
-import AuthorView from "./Author";
+// import AuthorView from "./Author";
 import RelatedPosts from "./RelatedPosts";
 export default function BlogPost(props) {
   const [shareOption, setShareOption] = useState([]);
@@ -155,25 +156,26 @@ export default function BlogPost(props) {
               X
             </button>
           </div>
-
+          {/* 
           <div className=" overlay-img-container">
             {featuredImg && featuredImg.large && (
-              <img
+              <Img
                 loading="lazy"
                 src={selectedImg}
                 className="rounded-md mb-3 feature-img"
                 alt={title.rendered}
               />
             )}
-          </div>
+          </div> */}
         </div>
       )}
 
       <div>
         <div className="flex justify-center items-start feature-img-container">
           {featuredImg && featuredImg.large && (
-            <img
-              onClick={imgFull}
+            <Img
+              width={800}
+              height={500}
               loading="lazy"
               src={featuredImg.large}
               className="rounded-md mb-3 feature-img"
@@ -224,11 +226,19 @@ export default function BlogPost(props) {
         <div className="share-bottom justify-center">
           <div className="share flex flex-wrap  justify-center  md:px-8 sm:px-4 lg:pr-12 inset-y-0 left-0 w-25 flex-row gap-4">
             {shareOption &&
-              shareOption.map((sh) => (
-                <div className="w-12 h-12 flex flex-row text-xs  justify-center flex-wrap items-center rounded-full ">
-                  <a href={sh.href} target="_blank">
+              shareOption.map((sh, i) => (
+                <div
+                  key={i}
+                  className="w-12 h-12 flex flex-row text-xs  justify-center flex-wrap items-center rounded-full "
+                >
+                  <a href={sh.href} target="_blank" rel="noreferrer">
                     {sh.src ? (
-                      <img src={sh.src} className="w-12 h-12 object-contain" />
+                      <Img
+                        width={28}
+                        height={28}
+                        src={sh.src}
+                        className="w-12 h-12 object-contain"
+                      />
                     ) : (
                       sh.label
                     )}
