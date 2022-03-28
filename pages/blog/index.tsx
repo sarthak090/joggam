@@ -1,7 +1,7 @@
 import { GetStaticProps, NextPage } from "next";
-import { Posts } from "../models/blog";
+import { Posts } from "../../models/blog";
 import { NextSeo } from "next-seo";
-import CardContainer from "../components/CardContainer";
+import CardContainer from "../../components/CardContainer";
 type Props = {
   posts: Posts[];
 };
