@@ -23,7 +23,7 @@ export default function Pagination(props: PaginationProps) {
             onClick={() => paginate(pgNumb)}
             className={`my-2 w-12 h-12 md:w-12 md:h-12 p-2 pt-3 md:p-4 text-center   font-bold text-sm text-gray-500 rounded-full cursor-pointer  ${
               pgNumb == currentPage
-                ? "bg-cardBackground text-gray-50 hover:text-white "
+                ? "bg-green-400 text-gray-50 hover:text-white "
                 : "bg-gray-300  "
             }`}
           >

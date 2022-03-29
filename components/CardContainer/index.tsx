@@ -87,7 +87,7 @@ export default function Index(props: Props) {
 
                   <Link href={`/blog/${post.slug}`}>
                     <a>
-                      <p className="text-xl my-2 font-circular  font-semibold  ">
+                      <p className="text-xl my-2   font-semibold  ">
                         {post.title.rendered}
                       </p>
                     </a>
@@ -142,7 +142,7 @@ export default function Index(props: Props) {
             </div>
           ))}
       </div>
-      <div className="flex justify-center border my-8  ">
+      <div className="flex justify-center   my-8  ">
         {posts && (
           <Pagination
             postsPerPage={postsPerPage}
