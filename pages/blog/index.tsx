@@ -18,10 +18,10 @@ const Home: NextPage<Props, any> = (props: Props) => {
           title: "Jobgam Blog",
         }}
       />
-      <div className="pt-8 px-4 lg:px-20 container mx-auto container-blog text-gray-600">
+      <div className="pt-8 px-4 lg:px-20 container mx-auto container-blog text-textPrimary">
         <h1 className="text-xl font-bold">BLOG & NEWS</h1>
 
-        <h2 className="text-5xl font-bold  ">Read About Us</h2>
+        <h2 className="text-3xl md:text-5xl font-bold  ">Read About Us</h2>
         <CardContainer posts={posts} />
       </div>
     </>

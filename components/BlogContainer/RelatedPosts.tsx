@@ -23,32 +23,20 @@ export default function RelatedPosts(props: Props) {
       {posts &&
         posts.map((post: PostData, i) => (
           <div key={i}>
-            <div className="grid grid-cols-2  bg-cardBackground md:block     rounded-md ">
-              <div className="hidden">
+            <div className="grid  grid-cols-2 items-center    bg-cardBackground md:block     rounded-md ">
+              <div className="bg-transparent m-0 border  ">
                 <Image
                   // loader={myLoader}
                   src={post.featuredImg.large}
                   alt={post.title.rendered}
-                  // objectFit="cover"
+                  objectFit="fill"
                   width={500}
-                  height={300}
+                  height={360}
                   layout="responsive"
                 />
               </div>
 
-              <div>
-                <Image
-                  // loader={myLoader}
-                  src={post.featuredImg.large}
-                  alt={post.title.rendered}
-                  // objectFit="cover"
-                  width={500}
-                  height={300}
-                  layout="responsive"
-                />
-              </div>
-
-              <div className="p-4 mb-4 text-white  ">
+              <div className=" py-2  text-white    ">
                 <div className="hidden md:block">
                   {post.category.length > 0 &&
                     post.category.map((singleCat: any, i: number) => (
@@ -72,17 +60,17 @@ export default function RelatedPosts(props: Props) {
 
                 <Link href={`/blog/${post.slug}`}>
                   <a>
-                    <p className="md:text-xl my-2 font-bold  ">
+                    <p className="text-sm sm:text-md md:text-xl m-2 md:font-bold  ">
                       {post.title.rendered}
                     </p>
                   </a>
                 </Link>
-                <p className="text-sm hidden md:block ">
+                <p className="text-sm hidden md:block m-2 ">
                   {post.excerpt.substring(0, 180)}{" "}
                 </p>
                 <Link href={`/blog/${post.slug}`}>
                   <a className="hidden md:block">
-                    <p className="flex gap-2 text-green-600 font-medium	my-2">
+                    <p className="flex gap-2 text-green-500   md:font-medium	m-2">
                       Read More
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -102,10 +90,10 @@ export default function RelatedPosts(props: Props) {
                   </a>
                 </Link>
 
-                <div className="flex gap-1 my-3">
+                <div className="flex items-center gap-1 m-2 ">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
+                    className="w-4 h-4 md:h-6  md:w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -117,7 +105,7 @@ export default function RelatedPosts(props: Props) {
                       d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span> {renderDate(post.diff)}</span>
+                  <span className="text-xs "> {renderDate(post.diff)}</span>
                 </div>
               </div>
             </div>

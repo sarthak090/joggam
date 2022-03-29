@@ -63,36 +63,44 @@ export default function Index(props: Props) {
                   layout="responsive"
                 />
 
-                <div className="p-4 mb-4 text-white  ">
-                  {post.category.length > 0 &&
-                    post.category.map((singleCat: any, i) => (
-                      <Link key={i} href={`/blog/category/${singleCat.slug}`}>
-                        <a
-                          href={`/blog/category/${singleCat.slug}`}
-                          className="uppercase font-bold text-sm tracking-widest text-brand	  mx-2"
-                        >
-                          <button className=" 	bg-btnClr my-2 px-3 py-1 rounded-md">
-                            {" "}
-                            <span
-                              dangerouslySetInnerHTML={{
-                                __html: singleCat.cat_name,
-                              }}
-                            ></span>
-                          </button>
-                        </a>
-                      </Link>
-                    ))}
+                <div className=" p-4 mb-4 text-white  ">
+                  <div className="hidden md:block">
+                    {post.category.length > 0 &&
+                      post.category.map((singleCat: any, i) => (
+                        <Link key={i} href={`/blog/category/${singleCat.slug}`}>
+                          <a
+                            href={`/blog/category/${singleCat.slug}`}
+                            className="uppercase font-bold text-sm tracking-widest text-brand	  mx-2"
+                          >
+                            <button className=" 	bg-btnClr my-2 px-3 py-1 rounded-md">
+                              {" "}
+                              <span
+                                dangerouslySetInnerHTML={{
+                                  __html: singleCat.cat_name,
+                                }}
+                              ></span>
+                            </button>
+                          </a>
+                        </Link>
+                      ))}
+                  </div>
+
                   <Link href={`/blog/${post.slug}`}>
                     <a>
-                      <p className="text-xl my-2 font-bold  ">
+                      <p className="text-xl my-2 font-circular  font-semibold  ">
                         {post.title.rendered}
                       </p>
                     </a>
                   </Link>
-                  <p className="text-sm ">{post.excerpt.substring(0, 180)} </p>
+                  <p
+                    className="text-sm "
+                    dangerouslySetInnerHTML={{
+                      __html: `${post.excerpt.substring(0, 180)} .....`,
+                    }}
+                  ></p>
                   <Link href={`/blog/${post.slug}`}>
                     <a>
-                      <p className="flex gap-2 text-green-600 font-medium	my-2">
+                      <p className=" gap-2 hidden md:flex text-brandGreen font-medium	my-2">
                         Read More
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
