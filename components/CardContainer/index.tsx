@@ -52,12 +52,13 @@ export default function Index(props: Props) {
         {currentPosts &&
           currentPosts.map((post: PostData) => (
             <div key={post.id}>
-              <div className="  bg-cardBackground block     rounded-md ">
+              <div className="  bg-cardBackground block     rounded-lg ">
                 <Image
                   // loader={myLoader}
                   src={post.featuredImg.large}
                   alt={post.title.rendered}
                   // objectFit="cover"
+                  className="rounded-lg"
                   width={500}
                   height={300}
                   layout="responsive"

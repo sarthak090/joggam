@@ -11,16 +11,16 @@ const Home: NextPage<Props, any> = (props: Props) => {
   return (
     <>
       <NextSeo
-        title="Jobgam"
-        description="jobgam"
+        title="Jobgam Blog | Your Source For Career Growth"
+        description="Get access to valuable content that will help you push your career to the next level both for job seeker and employees"
         openGraph={{
-          description: "the Official Blog For Jobgam",
-          title: "Jobgam Blog",
+          description:
+            "Get access to valuable content that will help you push your career to the next level both for job seeker and employees",
+          title: "Jobgam Blog | Your Source For Career Growth",
         }}
       />
       <div className="pt-8 px-4 lg:px-20 container mx-auto container-blog text-gray-600">
         <h1 className="text-xl font-bold">BLOG & NEWS</h1>
-
         <h2 className="text-5xl font-bold  ">Read About Us</h2>
         <CardContainer posts={posts} />
       </div>

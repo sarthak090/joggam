@@ -1,14 +1,4 @@
 export interface Posts {
-  // id: number;
-  // title: any;
-  // diff: any;
-  // slug: string;
-  // content: string;
-  // featuredImg: FeaturedImg;
-  // category: any;
-  // author: any;
-  // totalComments:string;
-  // publishedDate: Date;
   id: number;
   title: Title;
   diff: object;

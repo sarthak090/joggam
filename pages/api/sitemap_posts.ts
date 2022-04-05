@@ -1,4 +1,6 @@
-const handler = async (req, res) => {
+import type { NextApiRequest, NextApiResponse } from "next";
+
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const url = `${process.env.NEXT_PUBLIC_BLOG_URL}/wp-json/wpr/v1/posts`;
   const resp = await fetch(url);
   const projects = await resp.json();
@@ -8,7 +10,7 @@ const handler = async (req, res) => {
 };
 const YOUR_SITENAME = process.env.NEXT_PUBLIC_DOMAIN_NAME;
 
-const createSitemap = (projects) => `<?xml version="1.0" encoding="UTF-8"?>
+const createSitemap = (projects: []) => `<?xml version="1.0" encoding="UTF-8"?>
       <urlset
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

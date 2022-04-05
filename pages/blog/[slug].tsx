@@ -32,13 +32,22 @@ export const PostSlug: NextPage<Props, any> = (props: Props) => {
     const title: any = post !== undefined ? post.title : "Loading";
     return (
       <>
-        {title && (
+        {post && (
           <NextSeo
             title={title.rendered}
-            description="Home inspection repair estimates within 24 hours. Get zip code specific estimates, create a repair & credits request list, and negotiate the best deal sooner."
+            description="Get access to valuable content that will help you push your career to the next level both for job seeker and employees"
             openGraph={{
-              description: "the Official Blog For Majordomo",
-              title: "The Majordomo Blog | The Official Blog For Majordomo",
+              description:
+                "Get access to valuable content that will help you push your career to the next level both for job seeker and employees",
+              title: title.rendered,
+              images: [
+                {
+                  url: post?.featuredImg.large,
+                  width: 1280,
+                  height: 720,
+                  alt: title.rendered,
+                },
+              ],
             }}
           />
         )}
